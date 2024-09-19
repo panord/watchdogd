@@ -171,6 +171,9 @@ static int do_debug(char *arg)
 	int result;
 
 	arg = wdog_get_loglevel();
+	if (!arg)
+		return -1;
+
 	if (string_compare("notice", arg))
 		arg = "debug";
 	else
